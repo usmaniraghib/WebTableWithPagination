@@ -8,14 +8,13 @@ package com.raghib.selenium.table.pagination;
 * https://www.youtube.com/watch?v=jD5eWhNsaRk&t=27s
 */
 
-import java.util.concurrent.TimeUnit;
 import java.util.List;
+import java.time.Duration;
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.w3c.dom.NameList;
 
 public class PaginationWebTableExampleUsingSelenium {
 	
@@ -47,8 +46,8 @@ public class PaginationWebTableExampleUsingSelenium {
 
 		driver.get("https://datatables.net/examples/advanced_init/dt_events.html");
 
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(100,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(100));
 	}
 
 	public static void countRowsandColumnsInPage() {

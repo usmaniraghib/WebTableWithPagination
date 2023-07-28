@@ -1,13 +1,13 @@
 package com.raghib.selenium;
 
+import java.time.Duration;
+
 //NOTE :- Try to type one import statement then only import reference will be provided by eclipse.
 
 /*
 * REFERENCE:-
 * https://www.youtube.com/watch?v=1Sy7Wdx_NgA&list=PLYIXQpA4Ir9mJcizhqLt6WjcjOpTQUK0K&index=3&t=60s
 */
-
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -35,8 +35,8 @@ public class NSEDynamicWebTableExampleUsingSelenium {
 
 		driver.get("https://www.nseindia.com/market-data/live-equity-market");
 
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(100,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(100));
 	}
 
 	public static void countRowsandColumns() {
