@@ -11,10 +11,8 @@
 		<java.version>17</java.version>
 		<lombok-version>1.18.24</lombok-version>
 		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-		<selenium-java-version>4.9.1</selenium-java-version>
-	    <selenium-chrome-driver-version>4.9.1</selenium-chrome-driver-version>
-	    <webdrivermanager-version>5.3.3</webdrivermanager-version>
-		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<selenium-java-version>4.12.0</selenium-java-version>
+	    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		<testng-version>7.8.0</testng-version>
 		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		<maven.compiler.target>${java.version}</maven.compiler.target>
@@ -26,7 +24,7 @@
 
 	<dependencies>
 
-		<!-- SELENIUM [4.9.1] DEPENDENCY-->
+		<!-- SELENIUM [4.12.0] DEPENDENCY-->
 
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -35,20 +33,6 @@
 			<artifactId>selenium-java</artifactId>
 			<version>${selenium-java-version}</version>
 		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-chrome-driver</artifactId>
-			<version>${selenium-chrome-driver-version}</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-		<dependency>
-			<groupId>io.github.bonigarcia</groupId>
-			<artifactId>webdrivermanager</artifactId>
-			<version>${webdrivermanager-version}</version>
-		</dependency>
-
 		<!-- TESTNG [7.8.0] DEPENDENCY-->
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->

@@ -1,5 +1,8 @@
 package com.raghib.selenium.table.pagination;
 
+import java.time.Duration;
+import java.util.ArrayList;
+
 //NOTE :- Try to type one import statement then only import reference will be provided by eclipse.
 
 /*
@@ -9,21 +12,26 @@ package com.raghib.selenium.table.pagination;
 */
 
 import java.util.List;
-import java.time.Duration;
-import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class PaginationWebTableExampleUsingSelenium {
+import com.raghib.selenium.BaseClass;
+
+public class PaginationWebTableExampleUsingSelenium extends BaseClass {
 	
 	public static void main(String args[]) {
-		countRowsandColumnsInPage();
+		//countRowsandColumnsInPage();
 		printNamesOfColumn();
 	}
 
 	static WebDriver driver;
+	
+	static String browserName = "chrome";
+	static String browserVersion = "116";
+	static String url = "https://datatables.net/examples/advanced_init/dt_events.html";
+	
 	static int totalRows = 0;
 	static int totalRowsInPage = 0;
 	static int totalColumns = 0;
@@ -42,12 +50,16 @@ public class PaginationWebTableExampleUsingSelenium {
 	static List<String> nameList = new ArrayList<String>();
 
 	public static void getDriverandHitDatatablesURL() {
-		driver = BrowserSelection.usingChrome();
-
-		driver.get("https://datatables.net/examples/advanced_init/dt_events.html");
-
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		// Chrome Browser
+		driver = BaseClass.getDriver(browserName, browserVersion);
+		// Modify Wait time as per the Network Ability.
+		// From Selenium 4 onwards implicitWait and WebDriverWait(Explicit wait) for
+		// long is deprecated.
+		// So we can handle WebDriverWait in Selenium like below
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(100));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().window().maximize();
+		driver.get(url);
 	}
 
 	public static void countRowsandColumnsInPage() {
@@ -68,7 +80,7 @@ public class PaginationWebTableExampleUsingSelenium {
 		} else {
 			System.out.println("No of columns in this page : " + totalColumns);
 		}
-		//driver.quit();
+		//BaseClass.quitDriver();
 	}
 	
 	public static void printNamesOfColumn() {
@@ -111,7 +123,6 @@ public class PaginationWebTableExampleUsingSelenium {
 		} else {
 			System.out.println("Record Not Match");
 		}
-		driver.quit();
-	}
-	
+		BaseClass.quitDriver();
+	}	
 }
